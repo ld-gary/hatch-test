@@ -1,0 +1,149 @@
+<div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
+    <div class="w-full lg:w-1/5 px-6 text-xl text-gray-800 leading-normal">
+        <p class="text-base font-bold py-2 lg:pb-6 text-gray-700">Menu</p>
+        <div class="block lg:hidden sticky inset-0">
+            <button (click)="showMenu = !showMenu" id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border rounded border-gray-600 hover:border-yellow-400 appearance-none focus:outline-none">
+                <svg class="fill-current h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+            </button>
+        </div>
+        <div [ngClass]="{'hidden': !showMenu}" class="w-full sticky inset-0 hidden max-h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 my-2 lg:my-0 border border-gray-400 lg:border-transparent bg-white shadow lg:shadow-none lg:bg-transparent z-20" style="top:6em;" id="menu-content">
+            <ul class="list-reset py-2 md:py-0">
+                <li [ngClass]="{'border-yellow-400': tab === 'account-information'}" class="py-1 md:my-2 hover:bg-yellow-100 lg:hover:bg-transparent border-l-4 border-transparent font-bold">
+                    <a href="" (click)="tab = 'account-information'; showMenu = false; false" class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-400">
+                        <span class="pb-1 md:pb-0 text-sm">Account Information</span>
+                    </a>
+                </li>
+                <li [ngClass]="{'border-yellow-400': tab === 'assets'}" class="py-1 md:my-2 hover:bg-yellow-100 lg:hover:bg-transparent border-l-4 border-transparent">
+                    <a href="" (click)="tab = 'assets'; showMenu = false; false" class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-400">
+                        <span class="pb-1 md:pb-0 text-sm">Assets</span>
+                    </a>
+                </li>
+                <li [ngClass]="{'border-yellow-400': tab === 'stats'}" class="py-1 md:my-2 hover:bg-yellow-100 lg:hover:bg-transparent border-l-4 border-transparent">
+                    <a href="" (click)="tab = 'stats'; showMenu = false; false" class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-400">
+                        <span class="pb-1 md:pb-0 text-sm">Stats</span>
+                    </a>
+                </li>
+                <li [ngClass]="{'border-yellow-400': tab === 'logs-receipts'}" class="py-1 md:my-2 hover:bg-yellow-100 lg:hover:bg-transparent border-l-4 border-transparent">
+                    <a href="" (click)="tab = 'logs-receipts'; showMenu = false; false" class="block pl-4 align-middle text-gray-700 no-underline hover:text-yellow-400">
+                        <span class="pb-1 md:pb-0 text-sm">Logs / Receipts</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Section container-->
+    <section class="w-full lg:w-4/5">
+
+        <!--Title-->
+        <h1 class="flex items-center font-sans font-bold break-normal text-gray-700 px-2 text-xl mt-12 lg:mt-0 md:text-2xl">
+            {{portalSync.userProfile.appId}}
+        </h1>
+
+        <!--divider-->
+        <hr class="bg-gray-300 my-12">
+
+        <!--Card-->
+        <div *ngIf="tab === 'account-information'">
+            <h2 class="font-sans font-bold break-normal text-gray-700 px-2 pb-8 text-xl">Account Information</h2>
+            <app-account-information [userProfile]="portalSync.userProfile"></app-account-information>
+        </div>
+        <!--/Card-->
+        
+        <!--Card-->
+        <div *ngIf="tab === 'assets'">
+            <h2 class="font-sans font-bold break-normal text-gray-700 px-2 pb-8 text-xl">Assets</h2>
+            <div class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+                <nav class="flex flex-col sm:flex-row">
+                    <button (click)="assetsTab = 'cars'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': assetsTab === 'cars'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Cars
+                    </button>
+                    <button (click)="assetsTab = 'resources'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': assetsTab === 'resources'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Resources
+                    </button>
+                    <button (click)="assetsTab = 'augments'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': assetsTab === 'augments'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Augments
+                    </button>
+                </nav>
+                <div *ngIf="assetsTab === 'cars'">
+                    <app-cars [userCars]="portalSync.userCars" [allCars]="carsMap"></app-cars>
+                </div>
+                <div *ngIf="assetsTab === 'resources'">
+                    <app-resources [userResources]="portalSync.userResources" [allResources]="resourceMap"></app-resources>
+                </div>
+                <div *ngIf="assetsTab === 'augments'">
+                    <app-augments [userAugments]="portalSync.userAugments" [allAugments]="augmentMap"></app-augments>
+                </div>
+            </div>
+        </div>
+        <!--/Card-->
+
+        <!--Card-->
+        <div *ngIf="tab === 'stats'">
+            <h2 class="font-sans font-bold break-normal text-gray-700 px-2 pb-8 text-xl">Stats</h2>
+            <div class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+                <nav class="flex flex-col sm:flex-row">
+                    <button (click)="statsTab = 'fuel'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': statsTab === 'fuel'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Fuel
+                    </button>
+                    <button (click)="statsTab = 'daily-gift'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': statsTab === 'daily-gift'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Daily Gift
+                    </button>
+                    <button (click)="statsTab = 'ftue'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': statsTab === 'ftue'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        FTUE
+                    </button>
+                    <button (click)="statsTab = 'fusion-credits'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': statsTab === 'fusion-credits'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Fusion Credits
+                    </button>
+                </nav>
+                <div *ngIf="statsTab === 'fuel'">
+                    <app-fuel [fuel]="portalSync.fuel"></app-fuel>
+                </div>
+                <div *ngIf="statsTab === 'daily-gift'">
+                    <app-daily-gift [dailyGift]="portalSync.dailyGift"></app-daily-gift>
+                </div>
+                <div *ngIf="statsTab === 'ftue'">
+                    <app-ftue [ftueProgress]="portalSync.ftueProgress" [config]="orderedFTUEConfig"></app-ftue>
+                </div>
+                <div *ngIf="statsTab === 'fusion-credits'">
+                    <app-fusion-credits [fusionCredits]="portalSync.fusionCredits" [carManufacturerEnumMap]="carManufacturerEnumMap"></app-fusion-credits>
+                </div>
+            </div>
+        </div>
+        <!--/Card-->
+
+        <!--Card-->
+        <div id='logs-receipts' *ngIf="tab === 'logs-receipts'" class="mb-10">
+            <h2 class="font-sans font-bold break-normal text-gray-700 px-2 pb-8 text-xl">Logs / Receipts</h2>
+            <div class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+                <nav class="flex flex-col sm:flex-row">
+                    <button (click)="logsTab = 'errors'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': logsTab === 'errors'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Player Error Logs
+                    </button>
+                    <button (click)="logsTab = 'iap'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': logsTab === 'iap'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        IAP Receipts
+                    </button>
+                    <button (click)="logsTab = 'offers'" [ngClass]="{'text-yellow-500 border-b-2 font-medium border-yellow-500': logsTab === 'offers'}" class="text-gray-600 py-4 px-6 block hover:text-yellow-500 focus:outline-none">
+                        Offer Receipts
+                    </button>
+                </nav>
+                <div *ngIf="logsTab === 'errors'">
+                    <app-player-error-logs [logEntries]="portalSync.logEntries"></app-player-error-logs>
+                </div>
+                <div *ngIf="logsTab === 'iap'">
+                    <app-iap-receipts [userIAPReceipts]="portalSync.userIAPReceipts"></app-iap-receipts>
+                </div>
+                <div *ngIf="logsTab === 'offers'">
+                    <app-offer-receipts [userOfferReceipts]="portalSync.userOfferReceipts"></app-offer-receipts>
+                </div>
+            </div>
+        </div>
+        <!--/Card-->
+
+    </section>
+    <!--/Section container-->
+
+</div>
+<!--/container-->

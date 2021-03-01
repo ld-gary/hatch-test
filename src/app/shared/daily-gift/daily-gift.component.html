@@ -1,0 +1,48 @@
+<div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+    <form #dailyGiftForm="ngForm">
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="totalGiftsClaimed">Total Gifts Claimed:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="dailyGift && dailyGift.totalGiftsClaimed" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="totalGiftsClaimed" type="number" name="totalGiftsClaimed" />
+                    <div class="absolute top-2 right-2">
+                        <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Claim Gift</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="dateNextGiftAvailable">Date Next Gift Available:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="dailyGift && dailyGift.dateNextGiftAvailable" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="dateNextGiftAvailable" type="text" name="dateNextGiftAvailable" />
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="dateNextConsecutiveGiftAvailable">Date Next Consecutive Gift Available:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="dailyGift && dailyGift.dateNextConsecutiveGiftAvailable" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="dateNextConsecutiveGiftAvailable" type="number" name="dateNextConsecutiveGiftAvailable" />
+                    <div class="absolute top-2 right-2">
+                        <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-red-600">Unlock</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="consecutiveGiftsClaimed">Consecutive Gifts Claimed:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="dailyGift && dailyGift.consecutiveGiftsClaimed" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="consecutiveGiftsClaimed" type="text" name="consecutiveGiftsClaimed" />
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="maxConsecutiveGiftsClaimed">Max Consecutive Gifts Claimed:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="dailyGift && dailyGift.maxConsecutiveGiftsClaimed" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="maxConsecutiveGiftsClaimed" type="text" name="maxConsecutiveGiftsClaimed" />
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

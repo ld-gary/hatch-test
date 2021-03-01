@@ -1,0 +1,41 @@
+<div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+    <form #fuelForm="ngForm">
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Permanent fuel increase -->
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="permanentFuelIncrease">Fuel increase purchased?</label>
+                <div class="relative max-w-sm">
+                    <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="permanentFuelIncrease" type="number" name="permanentFuelIncrease" />
+                    <div class="absolute top-2 right-2">
+                        <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Purchase</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="remaining">Fuel remaining:</label>
+                <div class="relative max-w-sm">
+                    <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" [ngModel]="fuel && fuel.remaining" min="0" id="remaining" type="number" name="remaining" />
+                    <div class="absolute top-2 right-2">
+                        <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Set Fuel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="timer">Next fuel available:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="fuel && fuel.timer" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="timer" type="text" name="timer" />
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="max">Max fuel:</label>
+                <div class="relative max-w-sm">
+                    <input [disabled]="true" [(ngModel)]="fuel && fuel.max" class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="max" type="text" name="max" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+    <thead class="text-white">
+        <tr *ngFor="let fusionCredit of fusionCredits" class="bg-yellow-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+            <th class="p-3 text-left">Manufacturer</th>
+            <th class="p-3 text-left">Amount</th>
+        </tr>
+    </thead>
+    <tbody class="flex-1 sm:flex-none">
+        <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0" *ngFor="let fusionCredit of fusionCredits">
+            <td class="border-grey-light border hover:bg-gray-100 p-3">{{carManufacturerEnumMap[fusionCredit.manufacturerId]}}</td>
+            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                <div class="relative max-w-sm">
+                    <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="fusionCreditsAmount" type="number" [(ngModel)]="fusionCredit.amount" name="fusionCreditsAmount" />
+                    <div class="absolute top-2 right-2">
+                      <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                    </div>
+                </div>
+            </td>   
+        </tr>
+    </tbody>
+</table>

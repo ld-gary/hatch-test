@@ -1,0 +1,238 @@
+  
+  <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-white">
+    <form action="#" method="POST">
+        <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+          <div class="grid grid-cols-3 gap-6">
+            <div class="col-span-3 sm:col-span-2 mb-2">
+              <label for="appId" class="block text-gray-700 text-sm font-bold mb-2">App ID</label>
+              <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="appId" [(ngModel)]="userProfile && userProfile.appId" name="appId" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6">
+            <div class="col-span-3 sm:col-span-2 mb-2">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="hutchId">Hutch Id</label>
+              <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="hutchId" [(ngModel)]="userProfile && userProfile.hutchId" name="hutchId">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2">          
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="socialName">Social Display Name</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="socialName" [(ngModel)]="userProfile && userProfile.socialName" name="socialName">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="isCheater">Cheater</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="isCheater" name="isCheater" />
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="accountStatus">Account Status</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="accountStatus" name="accountStatus">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="spender">Spender</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="spender" name="spender">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="vip1">VIP Tier 1 Member</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="vip1" name="vip1">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="vip2">VIP Tier 2 Member</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="vip2" name="vip2">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="vip3">VIP Tier 3 Member</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="vip3" name="vip3">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="vip4">VIP Tier 4 Member</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="vip4" name="vip4">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="ldu">Limited Data Use</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="ldu" ame="ldu">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="deviceId">Device Id</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="deviceId" [(ngModel)]="userProfile && userProfile.deviceId" name="deviceId">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="region">Region</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="region" [(ngModel)]="userProfile && userProfile.region" name="region">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="registrationDate">Registration Date</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="registrationDate" [(ngModel)]="userProfile && userProfile.registrationDate" name="registrationDate">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="lastLoginDate">Last Login Date</label>
+                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="lastLoginDate" [(ngModel)]="userProfile && userProfile.lastLoginDate" name="lastLoginDate">
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="hardCurrency1">Gold</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="hardCurrency1" type="number" [ngModel]="userProfile && userProfile.hardCurrency1" name="hardCurrency1" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="hardCurrency2">Cash</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="hardCurrency2" type="number" [ngModel]="userProfile && userProfile.hardCurrency2" name="hardCurrency2" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="softCurrency1">Fusion Points</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="softCurrency1" type="number" [ngModel]="userProfile && userProfile.softCurrency1" name="softCurrency1" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="bronzeKeys">Bronze Keys</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="bronzeKeys" type="number" [ngModel]="userProfile && userProfile.bronzeKeys" name="bronzeKeys" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="silverKeys">Silver Keys</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="silverKeys" type="number" [ngModel]="userProfile && userProfile.silverKeys" name="silverKeys" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="goldKeys">Gold Keys</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="goldKeys" type="number" [ngModel]="userProfile && userProfile.goldKeys" name="goldKeys" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="xp">XP</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="xp" type="number" [ngModel]="userProfile && userProfile.xp" name="xp" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="level">Level</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="level" type="number" [ngModel]="userProfile && userProfile.level" name="level" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2 mb-2">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="trophies">Trophies</label>
+                <div class="relative max-w-sm">
+                  <input class="h-14 w-full pl-4 pr-24 bg-gray-100 rounded-lg z-0 focus:shadow focus:outline-none" min="0" id="trophies" type="number" [ngModel]="userProfile && userProfile.trophies" name="trophies" />
+                  <div class="absolute top-2 right-2">
+                    <button class="h-10 w-20 text-white rounded-lg bg-yellow-500 hover:bg-yellow-600">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
